@@ -1,0 +1,841 @@
+/*
+ * Animal Island (Night) Theme for Typora
+ * Dark variant — deep forest night with mint glow
+ * Companion to animal-island.css
+ */
+
+:root {
+    /* === Primary (mint glow) === */
+    --ai-primary:          #2dd4c1;
+    --ai-primary-hover:    #5ce5d4;
+    --ai-primary-active:   #19c8b9;
+    --ai-primary-bg:       rgba(45, 212, 193, 0.14);
+
+    /* === Text (warm cream) === */
+    --ai-text-main:        #f5e8c8;
+    --ai-text-body:        #e0d3b3;
+    --ai-text-secondary:   #b5a989;
+    --ai-text-muted:       #8a7e62;
+    --ai-text-disabled:    #5a5340;
+
+    /* === Surfaces (forest night) === */
+    --ai-bg-app:           #1a2624;
+    --ai-bg-paper:         #243430;
+    --ai-bg-soft:          #2e3f3a;
+    --ai-bg-input:         #1f2d29;
+
+    /* === Borders === */
+    --ai-border:           #5a6e68;
+    --ai-border-light:     #4a5d57;
+    --ai-border-soft:      #344541;
+
+    /* === Status === */
+    --ai-success:          #8fd44c;
+    --ai-warning:          #f5c31c;
+    --ai-error:            #ff7878;
+    --ai-focus-yellow:     #ffcc00;
+
+    /* === 3D Shadows (deeper than surface) === */
+    --ai-shadow-button:    #0d1413;
+    --ai-shadow-input:     #121c19;
+    --ai-shadow-card:      0 3px 12px 0 rgba(0, 0, 0, 0.35);
+    --ai-shadow-large:     0 8px 28px 0 rgba(0, 0, 0, 0.45);
+    --ai-shadow-deep:      0 4px 14px rgba(0, 0, 0, 0.55);
+
+    /* === Radius === */
+    --ai-radius-sm:        12px;
+    --ai-radius:           18px;
+    --ai-radius-lg:        24px;
+    --ai-radius-pill:      999px;
+
+    /* === Type === */
+    --ai-font:             -apple-system, BlinkMacSystemFont,
+                           "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                           "PingFang SC", "Noto Sans SC", "Noto Sans JP",
+                           "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    --ai-mono:             "JetBrains Mono", "Fira Code", "Cascadia Code",
+                           "SF Mono", Consolas, Menlo, monospace;
+}
+
+/* =========================================================
+   App canvas
+   ========================================================= */
+html {
+    font-size: 16px;
+}
+
+html, body {
+    background-color: var(--ai-bg-app);
+    font-family: var(--ai-font);
+    color: var(--ai-text-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.01em;
+}
+
+#write {
+    max-width: 860px;
+    margin: 30px auto 60px;
+    padding: 52px 64px 96px;
+    background-color: var(--ai-bg-paper);
+    border-radius: var(--ai-radius-lg);
+    box-shadow: var(--ai-shadow-card);
+    line-height: 1.75;
+    font-size: 16px;
+    color: var(--ai-text-body);
+}
+
+#write > *:first-child {
+    margin-top: 0 !important;
+}
+
+/* =========================================================
+   Headings
+   ========================================================= */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--ai-text-main);
+    font-family: var(--ai-font);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+}
+
+/* H1 — 居中勋章 · 三色发光胶囊下划线 */
+h1 {
+    font-size: 2.25em;
+    font-weight: 900;
+    text-align: center;
+    color: var(--ai-text-main);
+    margin: 1.3em 0 1.1em;
+    padding-bottom: 0.5em;
+    line-height: 1.3;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 8px;
+    margin: 0.55em auto 0;
+    border-radius: var(--ai-radius-pill);
+    background: linear-gradient(to right,
+        var(--ai-primary)   0%, var(--ai-primary)   40%,
+        var(--ai-warning)   40%, var(--ai-warning)  60%,
+        var(--ai-primary)   60%, var(--ai-primary)  100%);
+    box-shadow: 0 0 14px rgba(45, 212, 193, 0.55);
+}
+
+/* H2 — 卡片便签 · 薄荷渐变 + 左厚竖块 */
+h2 {
+    font-size: 1.7em;
+    font-weight: 800;
+    color: var(--ai-text-main);
+    margin: 1.8em 0 0.9em;
+    padding: 12px 20px 12px 22px;
+    background: linear-gradient(
+        to right,
+        var(--ai-primary-bg) 0%,
+        var(--ai-bg-soft) 55%,
+        transparent 100%
+    );
+    border-left: 8px solid var(--ai-primary);
+    border-radius: 0 var(--ai-radius) var(--ai-radius) 0;
+    box-shadow: 0 2px 0 0 var(--ai-shadow-input);
+}
+
+/* H3 — 小节 · 左竖线 + 底部虚线 */
+h3 {
+    font-size: 1.32em;
+    font-weight: 700;
+    color: var(--ai-text-main);
+    margin: 1.5em 0 0.7em;
+    padding: 4px 0 8px 14px;
+    border-left: 5px solid var(--ai-primary);
+    border-bottom: 2px dashed var(--ai-border-soft);
+}
+
+/* H4 — 薄荷文字 + 短"记号笔"下划线 */
+h4 {
+    font-size: 1.15em;
+    font-weight: 800;
+    color: var(--ai-primary);
+    margin: 1.3em 0 0.5em;
+    padding-bottom: 6px;
+    background-image: linear-gradient(
+        to right,
+        var(--ai-primary) 0,
+        var(--ai-primary) 36px,
+        transparent 36px
+    );
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 3px;
+}
+
+/* H5 — 深色胶囊贴纸 (inline-block) */
+h5 {
+    font-size: 0.98em;
+    font-weight: 800;
+    color: var(--ai-text-main);
+    margin: 1.1em 0 0.4em;
+    display: inline-block;
+    padding: 3px 14px;
+    background: var(--ai-bg-soft);
+    border: 1.5px solid var(--ai-border-light);
+    border-radius: var(--ai-radius-pill);
+}
+
+/* H6 — 大写微标签 */
+h6 {
+    font-size: 0.82em;
+    font-weight: 800;
+    color: var(--ai-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 1em 0 0.3em;
+}
+
+/* =========================================================
+   Paragraph / inline
+   ========================================================= */
+p {
+    margin: 0.8em 0;
+    line-height: 1.8;
+}
+
+strong, b {
+    color: var(--ai-text-main);
+    font-weight: 800;
+}
+
+em, i {
+    color: var(--ai-text-main);
+}
+
+mark {
+    background: var(--ai-focus-yellow);
+    color: #2a2010;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+del, s {
+    color: var(--ai-text-disabled);
+}
+
+/* =========================================================
+   Links
+   ========================================================= */
+a {
+    color: var(--ai-primary-hover);
+    text-decoration: none;
+    border-bottom: 2px dotted var(--ai-primary);
+    padding: 0 2px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+    color: #0d1413;
+    background: var(--ai-primary);
+    border-bottom-color: transparent;
+    border-radius: 5px;
+}
+
+/* =========================================================
+   Lists
+   ========================================================= */
+ul, ol {
+    padding-left: 1.8em;
+    margin: 0.7em 0;
+}
+
+li {
+    margin: 0.25em 0;
+}
+
+ul > li::marker {
+    color: var(--ai-primary);
+}
+
+ol > li::marker {
+    color: var(--ai-primary-hover);
+    font-weight: 800;
+}
+
+/* Task list */
+.md-task-list-item > input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: -3px;
+    background: var(--ai-bg-input);
+    border: 2.5px solid var(--ai-border-light);
+    border-radius: 6px;
+    box-shadow: 0 2px 0 0 var(--ai-shadow-input);
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+}
+
+.md-task-list-item > input:checked {
+    background: var(--ai-success);
+    border-color: var(--ai-success);
+    box-shadow: 0 2px 0 0 #4a7d1e;
+}
+
+.md-task-list-item > input:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 5px;
+    height: 10px;
+    border: solid #1a2624;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+}
+
+/* =========================================================
+   Blockquote
+   ========================================================= */
+blockquote {
+    margin: 1em 0;
+    padding: 12px 20px;
+    background: var(--ai-bg-soft);
+    border-left: 6px solid var(--ai-primary);
+    border-radius: var(--ai-radius);
+    color: var(--ai-text-body);
+    box-shadow: 0 3px 0 0 var(--ai-shadow-input);
+}
+
+blockquote p {
+    margin: 0.4em 0;
+}
+
+blockquote blockquote {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--ai-warning);
+    box-shadow: none;
+}
+
+/* =========================================================
+   Code
+   ========================================================= */
+code, tt {
+    font-family: var(--ai-mono);
+    font-size: 0.9em;
+    color: var(--ai-primary-hover);
+    background: var(--ai-primary-bg);
+    padding: 2px 8px;
+    border: 1.5px solid rgba(45, 212, 193, 0.3);
+    border-radius: 6px;
+}
+
+.md-fences, pre {
+    background: var(--ai-bg-input);
+    border: 2px solid var(--ai-border-light);
+    border-radius: var(--ai-radius);
+    padding: 16px 20px;
+    margin: 1em 0;
+    box-shadow: 0 3px 0 0 var(--ai-shadow-input);
+    font-family: var(--ai-mono);
+    font-size: 0.92em;
+    color: var(--ai-text-body);
+}
+
+.CodeMirror {
+    background: transparent !important;
+    font-family: var(--ai-mono) !important;
+    color: var(--ai-text-body) !important;
+}
+
+.CodeMirror-gutters {
+    background: transparent !important;
+    border-right: 1.5px dashed var(--ai-border-light) !important;
+}
+
+.CodeMirror-linenumber {
+    color: var(--ai-text-disabled) !important;
+}
+
+.CodeMirror-cursor {
+    border-left: 2px solid var(--ai-primary-hover) !important;
+}
+
+.CodeMirror-selected {
+    background: rgba(255, 204, 0, 0.35) !important;
+}
+
+/* === Syntax — applies to ALL CodeMirror instances (fenced + source) === */
+
+/* Markdown headers/formatting — override CodeMirror's default blue */
+.CodeMirror .cm-header,
+.CodeMirror .cm-header-1,
+.CodeMirror .cm-header-2,
+.CodeMirror .cm-header-3,
+.CodeMirror .cm-header-4,
+.CodeMirror .cm-header-5,
+.CodeMirror .cm-header-6 {
+    color: var(--ai-text-main) !important;
+    font-weight: 800;
+}
+
+.CodeMirror .cm-formatting,
+.CodeMirror .cm-formatting-header,
+.CodeMirror .cm-formatting-list,
+.CodeMirror .cm-formatting-quote,
+.CodeMirror .cm-formatting-code,
+.CodeMirror .cm-formatting-code-block,
+.CodeMirror .cm-formatting-strong,
+.CodeMirror .cm-formatting-em,
+.CodeMirror .cm-formatting-link,
+.CodeMirror .cm-formatting-link-string,
+.CodeMirror .cm-formatting-image {
+    color: var(--ai-primary) !important;
+    opacity: 0.95;
+}
+
+.CodeMirror .cm-strong { color: var(--ai-text-main) !important; font-weight: 800; }
+.CodeMirror .cm-em     { color: var(--ai-warning) !important; font-style: italic; }
+.CodeMirror .cm-link   { color: var(--ai-primary-hover) !important; }
+.CodeMirror .cm-url    { color: var(--ai-text-secondary) !important; }
+.CodeMirror .cm-quote  { color: var(--ai-text-secondary) !important; font-style: italic; }
+
+/* General language syntax (Python/JS/etc) */
+.CodeMirror .cm-keyword { color: #ff8a8a !important; font-weight: 700; }
+.CodeMirror .cm-atom    { color: #ffd566 !important; }
+.CodeMirror .cm-number  { color: #ffc94a !important; }
+.CodeMirror .cm-def     { color: var(--ai-primary-hover) !important; font-weight: 700; }
+.CodeMirror .cm-variable,
+.CodeMirror .cm-variable-2,
+.CodeMirror .cm-variable-3 { color: var(--ai-text-main) !important; }
+.CodeMirror .cm-property { color: var(--ai-primary-hover) !important; }
+.CodeMirror .cm-operator { color: var(--ai-text-body) !important; }
+.CodeMirror .cm-string   { color: #a8e670 !important; }
+.CodeMirror .cm-string-2 { color: #8fd44c !important; }
+.CodeMirror .cm-comment  { color: var(--ai-text-disabled) !important; font-style: italic; }
+.CodeMirror .cm-tag      { color: #ff8a8a !important; }
+.CodeMirror .cm-attribute{ color: #ffd566 !important; }
+.CodeMirror .cm-bracket  { color: var(--ai-text-secondary) !important; }
+.CodeMirror .cm-builtin  { color: var(--ai-primary) !important; }
+.CodeMirror .cm-meta     { color: var(--ai-text-muted) !important; }
+
+.MathJax, mjx-container {
+    color: var(--ai-text-main);
+}
+
+/* =========================================================
+   Horizontal rule — paw prints
+   ========================================================= */
+hr {
+    border: none;
+    height: 18px;
+    width: 70%;
+    margin: 2.4em auto;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 18'><ellipse cx='16' cy='13' rx='5' ry='3.8' fill='%232dd4c1'/><circle cx='9' cy='6' r='2.3' fill='%232dd4c1'/><circle cx='14' cy='3' r='2.3' fill='%232dd4c1'/><circle cx='19' cy='3' r='2.3' fill='%232dd4c1'/><circle cx='24' cy='6' r='2.3' fill='%232dd4c1'/></svg>");
+    background-size: 80px 18px;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+/* =========================================================
+   Tables
+   ========================================================= */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.2em auto;
+    border: 2px solid var(--ai-border-light);
+    border-radius: var(--ai-radius);
+    overflow: hidden;
+    box-shadow: var(--ai-shadow-card);
+}
+
+thead {
+    background: var(--ai-primary-active);
+}
+
+th {
+    color: #0d1413;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    padding: 10px 16px;
+    text-align: left;
+    border: none;
+}
+
+td {
+    padding: 10px 16px;
+    border-top: 1.5px dashed var(--ai-border-soft);
+    color: var(--ai-text-body);
+}
+
+tbody tr:nth-child(even) td {
+    background: var(--ai-bg-soft);
+}
+
+tbody tr:hover td {
+    background: var(--ai-primary-bg);
+}
+
+/* =========================================================
+   Images
+   ========================================================= */
+img {
+    max-width: 100%;
+    border-radius: var(--ai-radius);
+    box-shadow: var(--ai-shadow-deep);
+}
+
+p > img:only-child {
+    display: block;
+    margin: 1em auto;
+}
+
+/* =========================================================
+   Footnotes
+   ========================================================= */
+.md-footnote {
+    background: var(--ai-primary-bg);
+    color: var(--ai-primary-hover);
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   Selection
+   ========================================================= */
+::selection {
+    background: var(--ai-focus-yellow);
+    color: #2a2010;
+}
+
+/* =========================================================
+   Sidebar
+   ========================================================= */
+.sidebar,
+#typora-sidebar,
+.sidebar-content,
+.sidebar-content-content,
+.sidebar-tabs {
+    background-color: var(--ai-bg-app) !important;
+    color: var(--ai-text-body) !important;
+    font-family: var(--ai-font);
+    border-right: 1.5px solid var(--ai-border-soft);
+}
+
+.sidebar-tabs .sidebar-tab {
+    color: var(--ai-text-secondary);
+}
+
+.sidebar-tabs .sidebar-tab.active {
+    color: var(--ai-primary-hover);
+    border-bottom: 3px solid var(--ai-primary);
+}
+
+.outline-item,
+.file-list-item {
+    border-radius: var(--ai-radius-sm);
+    margin: 2px 6px;
+    padding: 6px 10px;
+    color: var(--ai-text-body);
+}
+
+.outline-item:hover,
+.file-list-item:hover {
+    background: var(--ai-bg-soft) !important;
+    color: var(--ai-text-main) !important;
+}
+
+.outline-active,
+.file-list-item-selected {
+    background: var(--ai-primary-bg) !important;
+    color: var(--ai-primary-hover) !important;
+    font-weight: 700;
+}
+
+.searchpanel-search-option-btn {
+    background: var(--ai-bg-input);
+    border: 2px solid var(--ai-border-light);
+    border-radius: var(--ai-radius-sm);
+    color: var(--ai-text-body);
+}
+
+/* =========================================================
+   Quick open / inputs
+   ========================================================= */
+#typora-quick-open {
+    background: var(--ai-bg-app) !important;
+}
+
+#typora-quick-open-input,
+.searchpanel-search-input,
+input[type="text"],
+input[type="search"] {
+    background: var(--ai-bg-input);
+    border: 2.5px solid var(--ai-border-light) !important;
+    border-radius: var(--ai-radius);
+    box-shadow: 0 3px 0 0 var(--ai-shadow-input);
+    color: var(--ai-text-body);
+    padding: 6px 12px;
+    transition: all 0.15s;
+}
+
+#typora-quick-open-input:focus,
+input[type="text"]:focus {
+    border-color: var(--ai-primary) !important;
+    box-shadow: 0 3px 0 0 var(--ai-primary-active);
+    outline: none;
+}
+
+/* Buttons */
+button,
+.btn,
+.export-item {
+    background: var(--ai-bg-soft);
+    border: 2px solid var(--ai-border-light);
+    border-radius: var(--ai-radius-sm);
+    box-shadow: 0 3px 0 0 var(--ai-shadow-button);
+    color: var(--ai-text-main);
+    font-weight: 700;
+    padding: 4px 12px;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 0 0 var(--ai-shadow-button);
+    background: var(--ai-primary-bg);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 0 var(--ai-shadow-button);
+}
+
+button.primary,
+.btn-primary {
+    background: var(--ai-primary);
+    color: #0d1413;
+    border-color: var(--ai-primary-active);
+    box-shadow: 0 3px 0 0 var(--ai-primary-active);
+}
+
+button.primary:hover {
+    background: var(--ai-primary-hover);
+    box-shadow: 0 4px 0 0 var(--ai-primary-active);
+}
+
+/* =========================================================
+   Footer / status bar
+   ========================================================= */
+footer,
+#footer {
+    background: var(--ai-bg-app);
+    color: var(--ai-text-secondary);
+    border-top: 2px dashed var(--ai-border-soft);
+    font-family: var(--ai-font);
+}
+
+.footer-item-info {
+    color: var(--ai-text-muted);
+}
+
+/* =========================================================
+   Source mode (CodeMirror) — high-contrast markdown source view
+   ========================================================= */
+#typora-source {
+    font-family: var(--ai-mono) !important;
+    background: var(--ai-bg-paper) !important;
+    color: var(--ai-text-body) !important;
+}
+
+#typora-source .CodeMirror {
+    background: var(--ai-bg-paper) !important;
+    color: var(--ai-text-body) !important;
+    font-family: var(--ai-mono) !important;
+    line-height: 1.7;
+}
+
+#typora-source .CodeMirror-cursor {
+    border-left: 2px solid var(--ai-primary-hover) !important;
+}
+
+#typora-source .CodeMirror-gutters {
+    background: var(--ai-bg-app) !important;
+    border-right: 1px solid var(--ai-border-light) !important;
+}
+
+#typora-source .CodeMirror-linenumber {
+    color: var(--ai-text-secondary) !important;
+    font-weight: 600;
+    padding: 0 8px 0 6px;
+}
+
+#typora-source .CodeMirror-selected,
+#typora-source .CodeMirror-line::selection,
+#typora-source .CodeMirror-line ::selection {
+    background: rgba(255, 204, 0, 0.35) !important;
+}
+
+/* === Markdown source syntax (override default CM blue) === */
+#typora-source .cm-header,
+#typora-source .cm-header-1,
+#typora-source .cm-header-2,
+#typora-source .cm-header-3,
+#typora-source .cm-header-4,
+#typora-source .cm-header-5,
+#typora-source .cm-header-6 {
+    color: var(--ai-text-main) !important;
+    font-weight: 800;
+}
+
+#typora-source .cm-formatting,
+#typora-source .cm-formatting-header,
+#typora-source .cm-formatting-list,
+#typora-source .cm-formatting-quote,
+#typora-source .cm-formatting-code,
+#typora-source .cm-formatting-code-block {
+    color: var(--ai-primary) !important;
+    opacity: 0.95;
+}
+
+#typora-source .cm-formatting-strong,
+#typora-source .cm-strong {
+    color: var(--ai-text-main) !important;
+    font-weight: 800;
+}
+
+#typora-source .cm-formatting-em,
+#typora-source .cm-em {
+    color: var(--ai-warning) !important;
+    font-style: italic;
+}
+
+#typora-source .cm-link,
+#typora-source .cm-formatting-link,
+#typora-source .cm-formatting-link-string {
+    color: var(--ai-primary-hover) !important;
+}
+
+#typora-source .cm-url {
+    color: var(--ai-text-secondary) !important;
+}
+
+#typora-source .cm-quote {
+    color: var(--ai-text-secondary) !important;
+    font-style: italic;
+}
+
+#typora-source .cm-comment {
+    color: var(--ai-text-disabled) !important;
+    font-style: italic;
+}
+
+#typora-source .cm-meta { color: var(--ai-text-muted) !important; }
+#typora-source .cm-string { color: #a8e670 !important; }
+#typora-source .cm-tag { color: #ff8a8a !important; }
+#typora-source .cm-keyword { color: #ff8a8a !important; }
+#typora-source .cm-number { color: #ffc94a !important; }
+#typora-source .cm-variable { color: var(--ai-text-body) !important; }
+#typora-source .cm-def { color: var(--ai-primary-hover) !important; }
+
+/* =========================================================
+   Popovers / dropdowns / modal
+   ========================================================= */
+.popover-title {
+    background: var(--ai-primary-bg);
+    color: var(--ai-primary-hover);
+    border-radius: var(--ai-radius-sm) var(--ai-radius-sm) 0 0;
+    font-weight: 800;
+}
+
+.popover {
+    background: var(--ai-bg-paper);
+    border: 2px solid var(--ai-border-light);
+    border-radius: var(--ai-radius);
+    box-shadow: var(--ai-shadow-large);
+    color: var(--ai-text-body);
+}
+
+.popover.bottom > .arrow:after { border-bottom-color: var(--ai-bg-paper); }
+.popover.top    > .arrow:after { border-top-color: var(--ai-bg-paper); }
+.popover.left   > .arrow:after { border-left-color: var(--ai-bg-paper); }
+.popover.right  > .arrow:after { border-right-color: var(--ai-bg-paper); }
+
+.tip,
+.tooltip {
+    background: var(--ai-text-main);
+    color: #1a2624;
+    border-radius: var(--ai-radius-sm);
+    box-shadow: var(--ai-shadow-card);
+    font-family: var(--ai-font);
+}
+
+.auto-suggest-container,
+.dropdown-menu {
+    background: var(--ai-bg-paper);
+    border: 2px solid var(--ai-border-light);
+    border-radius: var(--ai-radius);
+    box-shadow: var(--ai-shadow-large);
+}
+
+.dropdown-menu > li > a {
+    color: var(--ai-text-body);
+}
+
+.dropdown-menu > li > a:hover {
+    background: var(--ai-primary-bg);
+    color: var(--ai-primary-hover);
+}
+
+.modal-content {
+    background: var(--ai-bg-paper);
+    border: 2px solid var(--ai-border-light);
+    border-radius: var(--ai-radius-lg);
+    box-shadow: var(--ai-shadow-large);
+    color: var(--ai-text-body);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ai-bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ai-border-light);
+    border-radius: var(--ai-radius-pill);
+    border: 2px solid var(--ai-bg-app);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ai-primary);
+}
+
+/* =========================================================
+   Print
+   ========================================================= */
+@media print {
+    html, body {
+        background: white;
+        color: black;
+    }
+    #write {
+        box-shadow: none;
+        background: white;
+        max-width: 100%;
+        padding: 0;
+        color: black;
+    }
+    .md-fences, pre, blockquote, table {
+        box-shadow: none;
+    }
+}
