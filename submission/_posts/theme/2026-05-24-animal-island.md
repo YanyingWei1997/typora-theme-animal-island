@@ -17,6 +17,8 @@ Highlights:
 - Paw-print horizontal rules and custom 3D checkboxes.
 - High-contrast Source Mode: Markdown markers tinted mint, titles in cream — no more illegible default blue on dark backgrounds.
 
-![Preview of Animal Island theme](/media/theme/animal-island/preview.png)
+![Preview of Animal Island theme — Light](/media/theme/animal-island/preview.png)
+
+![Preview of Animal Island theme — Dark](/media/theme/animal-island/preview-dark.png)
 
 Tested on macOS. Inspired by [animal-island-ui](https://github.com/guokaigdg/animal-island-ui).

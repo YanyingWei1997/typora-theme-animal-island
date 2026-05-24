@@ -26,7 +26,9 @@
 
 ## 📸 预览
 
-> 截图见仓库的 `screenshots/` 目录（可选添加）
+| 日间 · Light | 夜间 · Dark |
+|:---:|:---:|
+| ![Light](./screenshots/light.png) | ![Dark](./screenshots/dark.png) |
 
 ---
 
