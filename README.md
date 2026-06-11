@@ -2,6 +2,11 @@
 
 > A cozy Animal Crossing–inspired theme for Typora — warm parchment, mint accents, soft 3D pillow shadows.
 
+[![Typora 官方主题库收录](https://img.shields.io/badge/Typora-官方主题库收录-19c8b9?style=flat-square&logo=typora&logoColor=white)](https://theme.typora.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-794f27?style=flat-square)](https://opensource.org/licenses/MIT)
+
+> 🎉 本主题已被官方收录进 **[Typora 主题库（theme.typora.io）](https://theme.typora.io)**，可在官网主题画廊直接浏览。
+
 一款灵感来自《集合啦！动物森友会》和 [animal-island-ui](https://github.com/guokaigdg/animal-island-ui) 的 Typora 主题，包含**日间**和**夜间**两个版本。
 
 ---
@@ -33,6 +38,8 @@
 ---
 
 ## 🚀 安装
+
+> 💡 本主题已上架 [Typora 官方主题库](https://theme.typora.io)，也可按下列步骤手动安装。
 
 1. 打开 Typora
 2. 菜单：**文件（File） → 偏好设置（Preferences） → 外观（Appearance） → 打开主题文件夹（Open Theme Folder）**
